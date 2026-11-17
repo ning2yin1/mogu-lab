@@ -4,3 +4,5 @@ html{touch-action:pan-x pan-y}input,select,textarea{font-size:16px}textarea{font
 nav a svg{display:block;width:24px;height:24px;margin:0 auto 3px}
 .omega-share{margin-top:16px}.omega-share .stack{width:100%;height:22px;border-radius:7px}.omega-labels{display:flex;justify-content:space-between;flex-wrap:wrap;gap:4px 12px;font-size:12px;margin-top:9px}
 .macro{border-radius:16px;padding:16px;margin:12px 0}.macro.protein{background:#eaf1f9}.macro.carbohydrate{background:#fff0df}.macro.fat{background:#eaf2e9}.macro-heading{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:5px 12px;margin-bottom:6px}.macro-heading h3{font-size:18px;margin:0}.macro-heading>strong{font-size:18px}.macro .nutrient{font-size:14px}.macro .note{margin:8px 0 0;font-size:12px}.energy-reference{color:#67717c;margin-top:18px}.energy-reference .nutrient{font-size:13px;padding-bottom:0}.energy-reference strong{font-weight:500}.energy-reference small{font-size:11px}.meal h3{overflow-wrap:anywhere}.macro strong{overflow-wrap:anywhere}
+
+.meal-notes p{white-space:pre-wrap;overflow-wrap:anywhere}
