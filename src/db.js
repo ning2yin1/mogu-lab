@@ -1,0 +1,4 @@
+let db;
+export async function openDB(){db=await new Promise((resolve,reject)=>{const r=indexedDB.open('mogu-lab',1);r.onupgradeneeded=()=>{r.result.createObjectStore('meals',{keyPath:'id'});r.result.createObjectStore('days',{keyPath:'date'})};r.onsuccess=()=>resolve(r.result);r.onerror=()=>reject(r.error);r.onblocked=()=>reject(new Error('他のタブを閉じて再読み込みしてください。'))});db.onversionchange=()=>db.close()}
+export function read(store){return new Promise((resolve,reject)=>{const tx=db.transaction(store);const r=tx.objectStore(store).getAll();r.onsuccess=()=>resolve(r.result);r.onerror=()=>reject(r.error)})}
+export function write(fn){return new Promise((resolve,reject)=>{const tx=db.transaction(['meals','days'],'readwrite');tx.oncomplete=resolve;tx.onerror=()=>reject(tx.error);tx.onabort=()=>reject(tx.error||new Error('保存できませんでした。'));try{fn(tx)}catch(e){tx.abort();reject(e)}})}
